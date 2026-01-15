@@ -9,6 +9,9 @@ The Azure IOT Hub Device SDK allows applications written in C99 or later or C++ 
 
 For **constrained devices**, where memory is measured in kilobytes and not megabytes, there are even lighter weight SDK options available.  See [Other Azure IoT SDKs](https://learn.microsoft.com/azure/iot-develop/concepts-using-c-sdk-and-embedded-c-sdk) to learn more.
 
+## Fork notes (alonf)
+This fork includes fixes for format specifiers that caused build failures with compilers treating format warnings as errors (e.g., GCC with -Werror=format on ESP-IDF). The changes update TPM-related sources and IoT Hub client logging to use <inttypes.h> PRI* macros for uint32_t/TPM_RC types.
+
 ## Table of Contents
 - [Azure IoT C SDKs and Libraries](#azure-iot-c-sdks-and-libraries)
   - [Important branch rename information](#important-branch-rename-information)
@@ -278,6 +281,8 @@ Below is a table showing the mapping of the LTS branches to the packages release
   | :-----: | :-----------: | :-----: | :------------: | :------------------: |
   | vcpkg: 2025-03-31 | lts_03_2025 | LTS_03_2025 | 2025-03-31 | 2026-03-31 |
   | vcpkg: 2024-08-12 | lts_08_2024 | LTS_08_2024 | 2024-08-12 | 2025-08-12 |
+  | vcpkg: 2022-01-21 | lts_01_2022 | LTS_01_2022_Ref01 | 2022-01-21 | 2023-01-21 |
+  | vcpkg: 2021-09-09 | lts_07_2021 | LTS_07_2021_Ref01 | 2021-08-11 | 2022-08-11 |
 
 'Maintenance End Date' refers to the end of life support of the related version.
 
